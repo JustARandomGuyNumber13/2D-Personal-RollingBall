@@ -11,11 +11,13 @@ public class P_InputHandler : MonoBehaviour
 
     float inputValue;
     Rigidbody2D rb;
+    Transform t;
 
     /* Monobehavior handler */
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        t = transform;
     }
     void Update()
     {
@@ -26,7 +28,7 @@ public class P_InputHandler : MonoBehaviour
     void Action_Move()
     {
         if (inputValue != 0)
-        { 
+        {
             rb.AddForce(Vector2.right * controller.MoveForce * inputValue);
         }
 

@@ -9,6 +9,7 @@ public class P_Controller : MonoBehaviour
     [SerializeField] Vector3 groundCheckBoxOffset;
 
     Rigidbody2D rb;
+    private Game_Manager gm;
     private float additionalMaxMoveSpeed;
     private float additionalJumpForce;
 
@@ -24,22 +25,50 @@ public class P_Controller : MonoBehaviour
     void Awake()
     { 
         rb = GetComponent<Rigidbody2D>();
+        gm = Game_Manager.instance;
     }
     void Start()
     {
         SetUp();
     }
+
+    int l;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Death"))
+        l = collision.gameObject.layer;
+
+        if (l == Global.DoorLayerInt)
+        {
+            if (gm.KeyCount > 0)
+            {
+                gm.KeyCount--;
+                collision.gameObject.SetActive(false);
+            }
+        }
+        else if (l == Global.DeathLayerInt)
         {
             OnDeathEvent?.Invoke();
-            return;
+        }
+        else if (l == Global.GroundLayerInt) 
+        { 
+            RaycastHit2D hit = Physics2D.BoxCast(transform.position + groundCheckBoxOffset, groundCheckBoxSize, 0, Vector2.zero, 0, Global.GroundLayer);
+            if (hit.collider != null)
+                OnGround = true;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        l = collision.gameObject.layer;
+
+        if (l == Global.LevelTriggerLayerInt)
+        {
+            gm.P_NextLevel();
+        }
+        else if (l == Global.KeyLayerInt)
+        {
+            gm.KeyCount++;
         }
 
-        RaycastHit2D hit = Physics2D.BoxCast(transform.position + groundCheckBoxOffset, groundCheckBoxSize, 0, Vector2.zero, 0, LayerMask.GetMask("Ground"));
-        if (hit.collider != null)
-            OnGround = true;
     }
     private void OnDrawGizmosSelected()
     {
