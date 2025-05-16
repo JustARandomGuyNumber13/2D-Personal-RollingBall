@@ -35,8 +35,7 @@ public class P_Controller : MonoBehaviour
     int l;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        l = collision.gameObject.layer;
-        print(l + " : " + collision.gameObject.name);
+        l = collision.collider.gameObject.layer;
 
         if (l == Global.DoorLayerInt)
         {
@@ -45,6 +44,12 @@ public class P_Controller : MonoBehaviour
                 gm.KeyCount--;
                 collision.gameObject.SetActive(false);
             }
+        }
+        else if (l == Global.EnemyLayerInt)
+        {
+            rb.linearVelocityY = 0;
+            rb.AddForce(Vector2.up * JumpForce* 0.75f, ForceMode2D.Impulse);
+            collision.gameObject.SetActive(false);
         }
         else if (l == Global.DeathLayerInt)
         {
@@ -64,11 +69,6 @@ public class P_Controller : MonoBehaviour
         if (l == Global.LevelTriggerLayerInt)
         {
             gm.P_NextLevel();
-        }
-        else if (l == Global.EnemyLayerInt)
-        {
-            rb.AddForce(Vector2.up * JumpForce / 2, ForceMode2D.Impulse);
-            collision.gameObject.SetActive(false);
         }
         else if (l == Global.KeyLayerInt)
         {
