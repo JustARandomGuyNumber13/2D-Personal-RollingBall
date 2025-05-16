@@ -11,6 +11,7 @@ public static class Global
     public static readonly int KeyLayerInt = LayerMask.NameToLayer("Key");
     public static readonly int DeathLayerInt = LayerMask.NameToLayer("Death");
     public static readonly int DestroyLayerInt = LayerMask.NameToLayer("Destroy");
+    public static readonly int EnemyLayerInt = LayerMask.NameToLayer("Enemy");
 
     public static readonly LayerMask PlayerLayer = LayerMask.GetMask("Player");
     public static readonly LayerMask GroundLayer = LayerMask.GetMask("Ground");

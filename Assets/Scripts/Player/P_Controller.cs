@@ -36,6 +36,7 @@ public class P_Controller : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         l = collision.gameObject.layer;
+        print(l + " : " + collision.gameObject.name);
 
         if (l == Global.DoorLayerInt)
         {
@@ -49,8 +50,8 @@ public class P_Controller : MonoBehaviour
         {
             OnDeathEvent?.Invoke();
         }
-        else if (l == Global.GroundLayerInt) 
-        { 
+        else if (l == Global.GroundLayerInt)
+        {
             RaycastHit2D hit = Physics2D.BoxCast(transform.position + groundCheckBoxOffset, groundCheckBoxSize, 0, Vector2.zero, 0, Global.GroundLayer);
             if (hit.collider != null)
                 OnGround = true;
@@ -64,9 +65,15 @@ public class P_Controller : MonoBehaviour
         {
             gm.P_NextLevel();
         }
+        else if (l == Global.EnemyLayerInt)
+        {
+            rb.AddForce(Vector2.up * JumpForce / 2, ForceMode2D.Impulse);
+            collision.gameObject.SetActive(false);
+        }
         else if (l == Global.KeyLayerInt)
         {
             gm.KeyCount++;
+            collision.gameObject.SetActive(false);
         }
 
     }
