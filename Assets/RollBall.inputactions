@@ -80,6 +80,17 @@
                 },
                 {
                     "name": "",
+                    "id": "ff94e469-8eb1-4d78-a6a9-f164f5c333c6",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "e3a26050-a065-4351-9340-d1e3da50e997",
                     "path": "<Keyboard>/r",
                     "interactions": "",

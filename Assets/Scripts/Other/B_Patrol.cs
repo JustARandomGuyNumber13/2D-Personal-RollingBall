@@ -7,11 +7,11 @@ public class B_Patrol : MonoBehaviour
     [SerializeField] float moveSpeed;
     [SerializeField] Vector2 xPoint;
     [SerializeField] float coolDown;
-
+    [SerializeField] bool moveLeft;
     [SerializeField] UnityEvent OnSwitchDirEvent;
     [SerializeField] UnityEvent OnStartMoveEvent;
 
-    private bool canMove, moveLeft;
+    private bool canMove; 
     Transform t;
     Rigidbody2D rb;
     float left, right;

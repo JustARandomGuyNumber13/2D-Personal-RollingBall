@@ -6,7 +6,6 @@ public class Game_Manager : MonoBehaviour
     public static Game_Manager instance;
     [SerializeField] bool debugMode;
     [SerializeField] Vector3[] playerPositionByLevel;
-    [SerializeField] GameObject[] levels;
     [SerializeField] private int curLevel;
 
  
@@ -17,7 +16,6 @@ public class Game_Manager : MonoBehaviour
     {
         if (instance != null)
         {
-            instance.levels = levels;
             instance.SetUp();
             Destroy(gameObject);
         }
@@ -37,8 +35,6 @@ public class Game_Manager : MonoBehaviour
         Vector3 scale = p.localScale;
         scale.x = curLevel % 2 == 0 ? 1 : -1;
         p.localScale = scale;
-
-        levels[curLevel].SetActive(true);
     }
 
 
@@ -49,13 +45,8 @@ public class Game_Manager : MonoBehaviour
         Vector3 scale = p.localScale;
         scale.x = curLevel % 2 == 0 ? 1 : -1;
         p.localScale = scale;
-
-        print(scale.x);
-        Invoke("DeactivatePrevLevel", 4f);
     }
+    public void P_SetLevel(int value)
+    { curLevel = value; }
 
-    void DeactivatePrevLevel()
-    { 
-        levels[curLevel - 1].SetActive(false);
-    }
 }

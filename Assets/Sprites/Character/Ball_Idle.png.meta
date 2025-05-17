@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 13fed40b45f782d4d8331de7c238cf4b
+guid: f9a7c4806888a4247bc64282b7bbc7c1
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -96,6 +96,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06586d4df31dc6644aef5db22396c6f4
-      internalID: -1745787207
+      spriteID: 4ed8cdb837c8b404a8b651be376dab97
+      internalID: 1063760654
       vertices: []
       indices: 
       edges: []
@@ -137,8 +150,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 568888c1d5a845647ae97d34ebd8818b
-      internalID: 1444696657
+      spriteID: 420b65f43b7b71d44a024c1a05b91e7e
+      internalID: -189159357
       vertices: []
       indices: 
       edges: []
@@ -159,8 +172,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53aaf41debc3a654bae3309378f69b85
-      internalID: 2035896271
+      spriteID: fc42ad2216450d44b8f4ab382746a460
+      internalID: -1528612273
       vertices: []
       indices: 
       edges: []
@@ -169,7 +182,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: cb23604dbec868a4bb2882fab2b1c602
+    spriteID: c53dd37115fe75445b34bf7a83a84795
     internalID: 0
     vertices: []
     indices: 
@@ -179,9 +192,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BallSheet_0: -1745787207
-      BallSheet_1: 1444696657
-      BallSheet_2: 2035896271
+      BallSheet_0: 1063760654
+      BallSheet_1: -189159357
+      BallSheet_2: -1528612273
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -53,6 +53,7 @@ public class P_Controller : MonoBehaviour
         }
         else if (l == Global.DeathLayerInt)
         {
+            Game_Manager.instance.KeyCount = 0;
             OnDeathEvent?.Invoke();
         }
         else if (l == Global.GroundLayerInt)

@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class P_InputHandler : MonoBehaviour
 {
     [SerializeField] P_Controller controller;
-
+    [SerializeField] Animator anim;
     [SerializeField] UnityEvent OnJumpEvent;
     [SerializeField] UnityEvent OnResetEvent;
 
@@ -14,10 +14,11 @@ public class P_InputHandler : MonoBehaviour
     Transform t;
 
     /* Monobehavior handler */
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         t = transform;
+        anim = GetComponent<Animator>();
     }
     void Update()
     {
@@ -48,6 +49,7 @@ public class P_InputHandler : MonoBehaviour
     void OnMove(InputValue value)
     { 
         inputValue = Mathf.Ceil(value.Get<float>());
+        anim.SetInteger("Move", (int)inputValue);
     }
     void OnJump(InputValue value)
     {
