@@ -46,7 +46,7 @@ CircleCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: df2243e099757654583cee3f378b483e, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -136,6 +136,7 @@ MonoBehaviour:
   moveSpeed: 4
   xPoint: {x: -5, y: 5}
   coolDown: 0
+  moveLeft: 0
   OnSwitchDirEvent:
     m_PersistentCalls:
       m_Calls: []

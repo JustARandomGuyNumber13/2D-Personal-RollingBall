@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fc12784fb479fc4b9ff3ebb4a2cff23, type: 3}
   m_Name: P_Stat_Ball
   m_EditorClassIdentifier: 
-  moveForce: 10
+  moveForce: 40
   maxMoveSpeed: 5
-  jumpForce: 20
-  groundCheckDistance: 1.1
+  jumpForce: 20.5
